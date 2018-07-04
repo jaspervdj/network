@@ -114,6 +114,17 @@ test-suite doctest
 
   ghc-options: -Wall
 
+executable lazy-send-all
+  default-language: Haskell2010
+  hs-source-dirs: tests
+  main-is: LazySendAll.hs
+  ghc-options: -Wall -threaded -O2 -rtsopts "-with-rtsopts=-N"
+
+  build-depends:
+    network,
+    bytestring,
+    base < 5
+
 source-repository head
   type:     git
   location: git://github.com/haskell/network.git
